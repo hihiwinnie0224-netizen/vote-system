@@ -15,7 +15,6 @@
         .input-field { width: 100%; padding: 14px; border-radius: 16px; border: 1px solid #eee; font-size: 13px; outline: none; transition: 0.3s; background: #fff; }
         .input-field:focus { border-color: #ccc; box-shadow: 0 0 0 2px rgba(0,0,0,0.02); }
         details summary { list-style: none; cursor: pointer; outline: none; }
-        details summary::-webkit-details-marker { display: none; }
         .cat-title { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; color: #555; }
     </style>
 </head>
@@ -27,84 +26,12 @@
     </header>
 
     <main class="max-w-md mx-auto px-6">
-        
         <section class="mb-10 space-y-4">
             <h2 class="text-[10px] font-bold text-gray-400 mb-2 tracking-widest uppercase ml-1">⊹ 𝑺𝒆𝒍𝒆𝒄𝒕 𝑪𝒂𝒕𝒆𝒈𝒐𝒓𝒚</h2>
-            
-            <details class="glass-card p-4 shadow-sm">
-                <summary class="flex justify-between items-center cat-title"><span>˗ˏˋ 兒童與文具專區 ˎˊ˗</span><span class="text-[8px] text-gray-300">▼</span></summary>
-                <div class="pt-4 flex flex-wrap">
-                    <span class="tag-btn" onclick="toggleTag(this)">女童裝</span><span class="tag-btn" onclick="toggleTag(this)">女童鞋</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">男童裝</span><span class="tag-btn" onclick="toggleTag(this)">男童鞋</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">兒童帽</span><span class="tag-btn" onclick="toggleTag(this)">兒童包</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">兒童襪</span><span class="tag-btn" onclick="toggleTag(this)">兒童頭飾</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">兒童用品</span><span class="tag-btn" onclick="toggleTag(this)">PP夾/夾子類</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">資料夾</span><span class="tag-btn" onclick="toggleTag(this)">便利貼</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">便簽本</span><span class="tag-btn" onclick="toggleTag(this)">筆記本</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">立可帶/美工刀</span><span class="tag-btn" onclick="toggleTag(this)">鉛筆盒</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">訂書機</span><span class="tag-btn" onclick="toggleTag(this)">筆筒</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">筆類</span><span class="tag-btn" onclick="toggleTag(this)">橡皮擦</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">書籤</span><span class="tag-btn" onclick="toggleTag(this)">桌墊/滑鼠墊</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">卡片/卡冊/卡磚</span>
-                </div>
-            </details>
-
-            <details class="glass-card p-4 shadow-sm">
-                <summary class="flex justify-between items-center cat-title"><span>˗ˏˋ 生活日常與結單商品 ˎˊ˗</span><span class="text-[8px] text-gray-300">▼</span></summary>
-                <div class="pt-4 flex flex-wrap">
-                    <span class="tag-btn" onclick="toggleTag(this)">牙刷</span><span class="tag-btn" onclick="toggleTag(this)">毯子</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">指甲剪</span><span class="tag-btn" onclick="toggleTag(this)">隱眼盒</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">衛生紙盒</span><span class="tag-btn" onclick="toggleTag(this)">洗臉巾</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">毛巾/擦手巾</span><span class="tag-btn" onclick="toggleTag(this)">沐浴球</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">iXIN系列</span><span class="tag-btn" onclick="toggleTag(this)">LaPO系列</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">WINI</span><span class="tag-btn" onclick="toggleTag(this)">ManyWish</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">副廠耳機/線</span><span class="tag-btn" onclick="toggleTag(this)">保護貼/殼</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">提提杯</span><span class="tag-btn" onclick="toggleTag(this)">小風扇</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">芳香噴霧</span><span class="tag-btn" onclick="toggleTag(this)">手工零食</span>
-                </div>
-            </details>
-
-            <details class="glass-card p-4 shadow-sm">
-                <summary class="flex justify-between items-center cat-title"><span>˗ˏˋ 角色專區與實拍 ˎˊ˗</span><span class="text-[8px] text-gray-300">▼</span></summary>
-                <div class="pt-4 flex flex-wrap">
-                    <span class="tag-btn" onclick="toggleTag(this)">三麗鷗</span><span class="tag-btn" onclick="toggleTag(this)">迪士尼</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">草莓熊/掌門狗</span><span class="tag-btn" onclick="toggleTag(this)">史努比/loopy</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">蠟筆小新</span><span class="tag-btn" onclick="toggleTag(this)">星之卡比</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">卡皮巴拉</span><span class="tag-btn" onclick="toggleTag(this)">柿子椒熊</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">線條小狗/chiikawa</span><span class="tag-btn" onclick="toggleTag(this)">現貨/代售</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">商品實拍</span><span class="tag-btn" onclick="toggleTag(this)">11月開團</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">晉捷生物科技</span>
-                </div>
-            </details>
-
-            <details class="glass-card p-4 shadow-sm">
-                <summary class="flex justify-between items-center cat-title"><span>˗ˏˋ 男女服飾專區 ˎˊ˗</span><span class="text-[8px] text-gray-300">▼</span></summary>
-                <div class="pt-4 flex flex-wrap">
-                    <span class="tag-btn" onclick="toggleTag(this)">女套裝/外套</span><span class="tag-btn" onclick="toggleTag(this)">女睡衣</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">女生T-shirt</span><span class="tag-btn" onclick="toggleTag(this)">抹胸/吊帶</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">女襯衫</span><span class="tag-btn" onclick="toggleTag(this)">女長短褲</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">長短裙/連衣裙</span><span class="tag-btn" onclick="toggleTag(this)">內衣褲</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">男套裝/外套</span><span class="tag-btn" onclick="toggleTag(this)">男睡衣</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">男生T-shirt</span><span class="tag-btn" onclick="toggleTag(this)">男馬甲/襯衫</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">男長短褲</span>
-                </div>
-            </details>
-
-            <details class="glass-card p-4 shadow-sm">
-                <summary class="flex justify-between items-center cat-title"><span>˗ˏˋ 配件美妝與美食 ˎˊ˗</span><span class="text-[8px] text-gray-300">▼</span></summary>
-                <div class="pt-4 flex flex-wrap">
-                    <span class="tag-btn" onclick="toggleTag(this)">包包/痛包</span><span class="tag-btn" onclick="toggleTag(this)">錢包/皮夾</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">眼鏡/帽子</span><span class="tag-btn" onclick="toggleTag(this)">髮飾/抓夾</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">手項鍊/耳環</span><span class="tag-btn" onclick="toggleTag(this)">穿戴甲/工具</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">美瞳專區</span><span class="tag-btn" onclick="toggleTag(this)">香水/護手霜</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">花知曉/彩棠</span><span class="tag-btn" onclick="toggleTag(this)">唇彩/眼影</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">娃娃/盲盒</span><span class="tag-btn" onclick="toggleTag(this)">玩具/小卡</span>
-                    <span class="tag-btn" onclick="toggleTag(this)">螺絲粉專區</span><span class="tag-btn" onclick="toggleTag(this)">各類糖果餅乾</span>
-                </div>
-            </details>
+            <div id="category-container" class="space-y-3"></div>
         </section>
 
-        <section class="glass-card p-8 shadow-xl animate__animated animate__fadeInUp">
+        <section class="glass-card p-8 shadow-xl">
             <form id="wish-form" class="space-y-6">
                 <input type="hidden" id="category-input" name="category" value="無">
                 
@@ -129,91 +56,87 @@
                     <textarea name="memo" rows="2" placeholder="備註或想說的話..." class="input-field"></textarea>
                 </div>
 
-                <button type="submit" id="submit-btn" class="w-full bg-gray-900 text-white text-[11px] font-bold py-5 rounded-2xl shadow-lg tracking-[0.4em] active:scale-95 transition uppercase">
-                    𝑺𝒆𝒏𝒅 𝑾𝒊𝒔𝒉 ⋆
-                </button>
+                <button type="submit" id="submit-btn" class="w-full bg-gray-900 text-white text-[11px] font-bold py-5 rounded-2xl shadow-lg tracking-[0.4em] active:scale-95 transition">𝑺𝑬𝑵𝑫 𝑾𝑰𝑺𝑯 ⋆</button>
                 <p id="status" class="text-center text-[10px] mt-6 hidden font-medium"></p>
             </form>
         </section>
-
     </main>
 
     <script>
+        const categories = {
+            "兒童專區 𝑨𝒑𝒑𝒂𝒓𝒆𝒍": ["女童裝", "女童鞋", "男童裝", "男童鞋", "兒童帽", "兒童包", "兒童襪", "兒童頭飾", "兒童用品"],
+            "文具類 𝑺𝒕𝒂𝒕𝒊𝒐𝒏𝒆𝒓𝒚": ["PP夾/夾子類", "資料夾", "便利貼", "便簽本", "筆記本", "立可帶/美工刀", "鉛筆盒", "訂書機", "筆筒", "筆類", "橡皮擦", "書籤", "桌墊/滑鼠墊", "卡片/卡冊/卡磚"],
+            "日常用品 𝑳𝒊𝒇𝒆𝒔𝒕𝒚𝒍𝒆": ["牙刷", "毯子", "指甲剪", "隱眼盒", "衛生紙盒", "洗臉巾", "毛巾/擦手巾", "沐浴球"],
+            "結單商品 𝑶𝒓𝒅𝒆𝒓": ["iXIN系列", "LaPO系列", "WINI", "ManyWish", "副廠耳機/線", "保護貼/殼", "提提杯", "小風扇", "芳香噴霧", "手工零食"],
+            "專區｜現貨｜實拍": ["三麗鷗", "迪士尼", "草莓熊/掌門狗", "史努比/loopy", "蠟筆小新", "星之卡比", "卡皮巴拉", "柿子椒熊", "線條小狗/chiikawa", "現貨/代售", "商品實拍", "每月開團", "晉捷生物科技"],
+            "女生專區 𝑭𝒆𝒎𝒂𝒍𝒆": ["女套裝/外套", "女睡衣", "女生T-shirt", "抹胸/吊帶", "女襯衫", "女長短褲", "長裙/連衣裙", "內衣褲"],
+            "男生專區 𝑴𝒂𝒍𝒆": ["男套裝/外套", "男睡衣", "男生T-shirt", "男馬甲/襯衫", "男長短褲"],
+            "鞋襪｜雨具 𝑺𝒉𝒐𝒆𝒔": ["長襪/短襪", "拖鞋/棉鞋", "短靴/長靴", "皮鞋/高跟鞋", "休閒鞋/洞洞鞋", "雨衣/雨傘"],
+            "包類｜配件 𝑨𝒄𝒄𝒆𝒔𝒔𝒐𝒓𝒊𝒆𝒔": ["包包/痛包", "錢包/皮夾", "眼鏡/帽子", "皮帶/鞋扣", "髮飾/抓夾", "手項鍊/耳環", "戒指/耳針", "手工穿戴甲"],
+            "食品專區 𝑭𝒐𝒐𝒅": ["各類糖果/餅乾", "螺絲粉專區", "魔芋/辣條系列", "好喝奶昔/飲品"]
+        };
+
+        const container = document.getElementById('category-container');
+        Object.keys(categories).forEach(cat => {
+            const details = document.createElement('details');
+            details.className = "glass-card p-4 shadow-sm animate__animated animate__fadeIn";
+            details.innerHTML = `<summary class="flex justify-between items-center cat-title"><span>˗ˏˋ ${cat} ˎˊ˗</span><span class="text-[8px] text-gray-300">▼</span></summary><div class="pt-4 flex flex-wrap">${categories[cat].map(tag => `<span class="tag-btn" onclick="toggleTag(this)">#${tag}</span>`).join('')}</div>`;
+            container.appendChild(details);
+        });
+
         let selectedTags = [];
         function toggleTag(el) {
             const tag = el.innerText;
-            if (el.classList.contains('active')) {
-                el.classList.remove('active');
-                selectedTags = selectedTags.filter(t => t !== tag);
-            } else {
-                el.classList.add('active');
-                selectedTags.push(tag);
-            }
-            document.getElementById('category-input').value = selectedTags.length > 0 ? selectedTags.join(', ') : "無";
+            el.classList.toggle('active');
+            if (el.classList.contains('active')) selectedTags.push(tag);
+            else selectedTags = selectedTags.filter(t => t !== tag);
+            document.getElementById('category-input').value = selectedTags.join(', ') || "無";
         }
 
         const form = document.getElementById("wish-form");
-        const btn = document.getElementById("submit-btn");
-        const status = document.getElementById("status");
-
         form.onsubmit = async (e) => {
             e.preventDefault();
+            const btn = document.getElementById("submit-btn");
+            const status = document.getElementById("status");
+            
+            // 已經為你填入正確的網址與 ID
             const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2qz29Rep2WLcQK4EYp8XM_lCOCVlklay3DjqyPm5zzSXEwA/formResponse";
             
-// 請將這段貼到 index.html 中替換舊有的 entryIDs
-const entryIDs = {
-    category: "entry.1158581699",    // 類別 (Category)
-    productName: "entry.1706240292", // 商品名稱 (Item Name)
-    imgUrl: "entry.1691954316",      // 圖片連結 (Image Link)
-    priceIdeal: "entry.1565578772",  // 理想價 (Wish Price)
-    priceRef: "entry.602534063",     // 參考價 (Market Price)
-    note: "entry.1352729938"         // 備註 (Memo)
-};
-
-            const cat = document.getElementById('category-input').value;
-            const item = document.getElementById('item-input').value;
-
-            if (cat === "無" && (!item || item.trim() === "")) {
-                status.innerText = "⋆ 請至少提供類別或名稱唷 ⋆";
-                status.className = "text-center text-[10px] text-rose-400 mt-6 animate__animated animate__shakeX";
-                status.classList.remove("hidden");
-                return;
-            }
+            const entryIDs = {
+                category: "entry.1158581699", 
+                item: "entry.1706240292",
+                image: "entry.1691954316",
+                wish_price: "entry.1565578772",
+                market_price: "entry.602534063",
+                memo: "entry.1352729938"
+            };
 
             btn.disabled = true;
             btn.innerText = "✦ 𝑷𝑹𝑶𝑪𝑬𝑺𝑺𝑰𝑵𝑮...";
 
             const formData = new URLSearchParams();
-            formData.append(entryIDs.category, cat);
-            formData.append(entryIDs.item, item || "無");
+            formData.append(entryIDs.category, document.getElementById('category-input').value);
+            formData.append(entryIDs.item, form.item.value || "無");
             formData.append(entryIDs.image, form.image.value || "無");
             formData.append(entryIDs.wish_price, form.wish_price.value || "無");
             formData.append(entryIDs.market_price, form.market_price.value || "無");
             formData.append(entryIDs.memo, form.memo.value || "無");
 
             try {
-                await fetch(GOOGLE_FORM_URL, {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: formData,
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                });
-
+                await fetch(GOOGLE_FORM_URL, { method: "POST", mode: "no-cors", body: formData });
                 status.innerText = "⋆ 許願成功，𝑳𝒊𝒏𝑺𝒉𝒐𝒑 已收到 ⋆";
                 status.className = "text-center text-[10px] text-green-600 mt-6 animate__animated animate__fadeIn";
                 status.classList.remove("hidden");
                 form.reset();
                 document.querySelectorAll('.tag-btn').forEach(t => t.classList.remove('active'));
-                document.getElementById('category-input').value = "無";
                 selectedTags = [];
-                btn.innerText = "𝑺𝑬𝑵𝑫 𝑨𝑮𝑨𝑰𝑵";
             } catch (err) {
                 status.innerText = "⋆ 傳送失敗，請稍後再試 ⋆";
                 status.className = "text-center text-[10px] text-red-400 mt-6";
                 status.classList.remove("hidden");
-                btn.innerText = "𝑹𝑬𝑻𝑹𝒀";
             } finally {
                 btn.disabled = false;
+                btn.innerText = "𝑺𝑬𝑵𝑫 𝑨𝑮𝑨𝑰𝑵";
             }
         };
     </script>
