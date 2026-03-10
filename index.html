@@ -4,128 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinShop ✧ 隨心許願池</title>
+    
+    <meta property="og:title" content="LinShop ✧ 隨心許願池">
+    <meta property="og:description" content="點擊標籤．隨心許願，告訴我你想找什麼商品 ⊹">
+    <meta property="og:image" content="https://i.ibb.co/v6ptnV1m/S-6365186.jpg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
         
         :root {
             --primary-dark: #111111;
-            --accent-soft: #f8f9fa;
+            --soft-bg: #fdfbfb;
         }
 
         body { 
             font-family: 'Noto Sans TC', sans-serif; 
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            color: #333; 
+            color: #222; /* 深色文字增加清晰度 */
             -webkit-tap-highlight-color: transparent;
             min-height: 100vh;
         }
 
-        /* 飄浮粒子背景效果 */
+        /* 裝飾粒子 */
         .bg-particles {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             pointer-events: none;
-            background-image: radial-gradient(#ddd 1px, transparent 1px);
+            background-image: radial-gradient(#aaa 0.5px, transparent 0.5px);
             background-size: 40px 40px;
-            opacity: 0.3;
+            opacity: 0.15;
+        }
+
+        .logo-img {
+            width: 100px; /* 稍微放大 Logo */
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+            margin: 0 auto;
         }
 
         .glass-card { 
-            background: rgba(255, 255, 255, 0.7); 
-            backdrop-filter: blur(15px); 
-            border: 1px solid rgba(255, 255, 255, 0.4); 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.6); 
             border-radius: 30px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
         }
 
+        /* 加大標籤字體 */
         .tag-btn { 
             display: inline-block; 
-            padding: 8px 16px; 
+            padding: 10px 18px; 
             margin: 5px; 
-            border-radius: 15px; 
+            border-radius: 16px; 
             background: #fff; 
-            font-size: 11px; 
-            color: #666; 
+            font-size: 14px; /* 加大字體 */
+            font-weight: 500;
+            color: #444; 
             cursor: pointer; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border: 1px solid #f0f0f0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 1px solid #eee;
         }
-
-        .tag-btn:active { transform: scale(0.9); }
 
         .tag-btn.active { 
             background: var(--primary-dark); 
             color: #fff; 
             border-color: var(--primary-dark);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
         }
 
-        details { transition: all 0.3s ease; }
-        details[open] { margin-bottom: 20px; }
-
-        summary { list-style: none; cursor: pointer; transition: 0.3s; }
+        summary { list-style: none; cursor: pointer; outline: none; }
         summary::-webkit-details-marker { display: none; }
-
-        .btn-loading {
-            pointer-events: none;
-            opacity: 0.7;
-            position: relative;
+        
+        /* 加大分類標題 */
+        .cat-title { 
+            font-size: 16px; 
+            font-weight: 600; 
+            letter-spacing: 0.05em; 
+            color: #333; 
         }
 
-        /* 成功彈窗動畫 */
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        .submit-btn {
+            background: var(--primary-dark);
+            color: white;
+            font-size: 16px; /* 加大按鈕文字 */
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-        .success-popup {
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+        .line-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: #06C755;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
         }
+        .line-link:hover { opacity: 0.9; transform: scale(1.05); }
     </style>
 </head>
 <body class="pb-24">
     <div class="bg-particles"></div>
 
-    <header class="pt-20 pb-12 text-center">
-        <div class="animate__animated animate__fadeInDown">
-            <h1 class="text-2xl font-light tracking-[0.5em] text-gray-900 uppercase">𝑳𝒊𝒏𝑺𝒉𝒐𝒑 𝑾𝒊𝒔𝒉</h1>
-            <div class="h-[1px] w-12 bg-gray-300 mx-auto mt-4 mb-4"></div>
-            <p class="text-[10px] text-gray-400 tracking-[0.3em]">˗ˏˋ 點擊標籤．隨心許願 ˎˊ˗</p>
-        </div>
+    <header class="pt-16 pb-10 text-center animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/v6ptnV1m/S-6365186.jpg" alt="LinShop Logo" class="logo-img mb-6">
+        <h1 class="text-2xl font-bold tracking-[0.4em] text-gray-900 uppercase">𝑳𝒊𝒏𝑺𝒉𝒐𝒑 𝑾𝒊𝒔𝒉</h1>
+        <p class="text-[13px] mt-4 text-gray-500 tracking-[0.2em] font-medium">‧₊˚✩彡 點擊標籤．隨心許願 ✧</p>
     </header>
 
     <main class="max-w-md mx-auto px-6">
-        <section id="category-container" class="space-y-4 mb-12">
-            </section>
+        <div class="flex justify-between items-end mb-6 px-1">
+            <h2 class="text-[12px] font-bold text-gray-400 tracking-widest uppercase">⊹ 𝑪𝒂𝒕𝒆𝒈𝒐𝒓𝒚 ⊹</h2>
+            <button onclick="clearAll()" class="text-[11px] text-gray-500 hover:text-black transition underline">清空選擇 𝑹𝒆𝒔𝒆𝒕</button>
+        </div>
 
-        <div class="glass-card p-10 animate__animated animate__fadeInUp">
-            <form id="wish-form" class="text-center">
+        <section id="category-container" class="space-y-4 mb-10"></section>
+
+        <div class="glass-card p-10 text-center animate__animated animate__fadeInUp">
+            <form id="wish-form">
                 <input type="hidden" id="category-input" value="無">
                 
-                <div id="counter-box" class="mb-8 opacity-0 transition-all duration-500">
-                    <span class="text-[10px] text-gray-400 uppercase tracking-widest">Selected</span>
-                    <div id="selected-count" class="text-2xl font-light text-gray-800">0</div>
+                <div id="counter-box" class="mb-6 opacity-0 transition-opacity duration-500">
+                    <span class="text-[11px] text-gray-400 uppercase tracking-widest">已選擇項目 ‧₊˚</span>
+                    <div id="selected-count" class="text-3xl font-bold text-gray-900">0</div>
                 </div>
 
-                <button type="submit" id="submit-btn" class="w-full bg-gray-900 text-white text-[12px] font-medium py-6 rounded-[20px] shadow-2xl tracking-[0.5em] active:scale-95 transition-all duration-300">
+                <button type="submit" id="submit-btn" class="submit-btn w-full py-6 rounded-2xl active:scale-95">
                     𝑺𝑬𝑵𝑫 𝑾𝑰𝑺𝑯 ⋆
                 </button>
                 
-                <div id="status-container" class="mt-8 h-4 overflow-hidden">
-                    <p id="status" class="text-[10px] font-medium tracking-widest"></p>
-                </div>
+                <p id="status" class="mt-8 text-[13px] font-bold h-4"></p>
             </form>
         </div>
+
+        <footer class="mt-20 text-center animate__animated animate__fadeIn">
+            <p class="text-[12px] text-gray-400 mb-6 tracking-widest">如有其他需求請洽客服 ⊹</p>
+            <a href="https://lin.ee/Am38RaD" target="_blank" class="line-link">
+                <span class="mr-2">LINE 客服聯絡</span>
+                <span>💬</span>
+            </a>
+            <p class="text-[10px] text-gray-300 mt-12 tracking-widest">© 2026 LinShop. All Rights Reserved.</p>
+        </footer>
     </main>
 
     <script>
         const categories = {
             "兒童專區 𝑨𝒑𝒑𝒂𝒓𝒆𝒍": ["女童裝", "女童鞋", "男童裝", "男童鞋", "兒童帽", "兒童包", "兒童襪", "兒童用品"],
             "文具類 𝑺𝒕𝒂𝒕𝒊𝒐𝒏𝒆𝒓𝒚": ["PP夾/夾子類", "資料夾", "便利貼", "便簽本", "筆記本", "筆類", "橡皮擦", "書籤", "桌墊"],
-            "日常用品 𝑳𝒊𝒇𝒆𝒔𝒕𝒚𝒍𝒆": ["牙刷", "毯子", "指甲剪", "隱眼盒", "衛生紙盒", "洗臉巾", "毛巾/擦手巾", "沐浴球"],
+            "日常用品 𝑳𝒊𝒇𝒆𝒔𝒕𝒚𝒍𝒆": ["牙刷", "毯子", "指甲剪", "隱眼盒", "衛生紙盒", "洗臉巾", "毛巾", "沐浴球"],
             "專區｜現貨｜實拍": ["三麗鷗", "迪士尼", "草莓熊/掌門狗", "史努比/loopy", "蠟筆小新", "星之卡比", "卡皮巴拉", "chiikawa", "每月開團"],
             "女生專區 𝑭𝒆𝒎𝒂𝒍𝒆": ["女套裝/外套", "女睡衣", "女生T-shirt", "抹胸/吊帶", "女襯衫", "女長短褲", "長裙/連衣裙", "內衣褲"],
             "包類｜配件 𝑨𝒄𝒄𝒆𝒔𝒔𝒐𝒓𝒊𝒆𝒔": ["包包/痛包", "錢包/皮夾", "眼鏡/帽子", "髮飾/抓夾", "手項鍊/耳環", "戒指/耳針", "手工穿戴甲"],
@@ -134,28 +170,23 @@
         };
 
         const container = document.getElementById('category-container');
-        Object.keys(categories).forEach((cat, index) => {
+        Object.keys(categories).forEach((cat, idx) => {
             const details = document.createElement('details');
-            details.className = "glass-card p-5 animate__animated animate__fadeIn";
-            details.style.animationDelay = `${index * 0.1}s`;
-            
+            details.className = "glass-card p-6 animate__animated animate__fadeIn";
+            details.style.animationDelay = `${idx * 0.05}s`;
             details.innerHTML = `
                 <summary class="flex justify-between items-center">
-                    <span class="cat-title tracking-[0.2em]">˗ˏˋ ${cat} ˎˊ˗</span>
-                    <svg class="w-3 h-3 text-gray-300 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <span class="cat-title">˗ˏˋ ${cat} ˎˊ˗</span>
+                    <svg class="w-4 h-4 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </summary>
                 <div class="pt-6 flex flex-wrap gap-1">
                     ${categories[cat].map(tag => `<span class="tag-btn" onclick="toggleTag(this)">#${tag}</span>`).join('')}
                 </div>
             `;
-            
-            // 箭頭旋轉動畫
             details.addEventListener('toggle', () => {
                 const svg = details.querySelector('svg');
-                if (details.open) svg.classList.add('rotate-180');
-                else svg.classList.remove('rotate-180');
+                svg.classList.toggle('rotate-180', details.open);
             });
-
             container.appendChild(details);
         });
 
@@ -163,43 +194,41 @@
         function toggleTag(el) {
             const tag = el.innerText;
             el.classList.toggle('active');
-            
-            if (el.classList.contains('active')) {
-                selectedTags.push(tag);
-            } else {
-                selectedTags = selectedTags.filter(t => t !== tag);
-            }
+            if (el.classList.contains('active')) selectedTags.push(tag);
+            else selectedTags = selectedTags.filter(t => t !== tag);
             
             document.getElementById('category-input').value = selectedTags.join(', ') || "無";
             
-            // 更新計數器視覺效果
-            const counterBox = document.getElementById('counter-box');
+            const countBox = document.getElementById('counter-box');
             const countDisplay = document.getElementById('selected-count');
             countDisplay.innerText = selectedTags.length;
-            
-            if (selectedTags.length > 0) {
-                counterBox.classList.remove('opacity-0');
-                counterBox.classList.add('animate__animated', 'animate__pulse');
-                setTimeout(() => counterBox.classList.remove('animate__pulse'), 500);
-            } else {
-                counterBox.classList.add('opacity-0');
-            }
+            countBox.style.opacity = selectedTags.length > 0 ? "1" : "0";
+        }
+
+        function clearAll() {
+            if(selectedTags.length === 0) return;
+            document.querySelectorAll('.tag-btn').forEach(t => t.classList.remove('active'));
+            selectedTags = [];
+            document.getElementById('category-input').value = "無";
+            document.getElementById('selected-count').innerText = "0";
+            document.getElementById('counter-box').style.opacity = "0";
         }
 
         const form = document.getElementById("wish-form");
         form.onsubmit = async (e) => {
             e.preventDefault();
             if (selectedTags.length === 0) {
-                showStatus("請至少選擇一個標籤哦 ✧", "text-red-400");
+                alert("請先選擇想要許願的類別標籤哦 ✧");
                 return;
             }
 
             const btn = document.getElementById("submit-btn");
+            const status = document.getElementById("status");
             const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScxnQFlk684wdqOqabNrkOtlN5N4_DRHK_LiXC4mqugKFv9BA/formResponse";
             const categoryID = "entry.2018690279";
 
-            btn.classList.add('btn-loading');
-            btn.innerText = "✦ 𝑾𝑨𝑰𝑻𝑰𝑵𝑮...";
+            btn.disabled = true;
+            btn.innerText = "✦ 𝑷𝑹𝑶𝑪𝑬𝑺𝑺𝑰𝑵𝑮...";
 
             const formData = new URLSearchParams();
             formData.append(categoryID, document.getElementById('category-input').value);
@@ -212,33 +241,22 @@
                     body: formData
                 });
 
-                showStatus("⋆ 許願成功，𝑳𝒊𝒏𝑺𝒉𝒐𝒑 已收到 ⋆", "text-green-600 success-popup");
+                status.innerText = "⋆ 許願成功，𝑳𝒊𝒏𝑺𝒉𝒐𝒑 已收到 ⋆";
+                status.className = "mt-8 text-[13px] font-bold text-green-600 animate__animated animate__pulse";
                 
-                // 重置
-                document.querySelectorAll('.tag-btn').forEach(t => t.classList.remove('active'));
-                selectedTags = [];
-                document.getElementById('category-input').value = "無";
-                document.getElementById('selected-count').innerText = "0";
-                document.getElementById('counter-box').classList.add('opacity-0');
-                
-            } catch (err) {
-                showStatus("⋆ 傳送失敗，請稍後再試 ⋆", "text-red-400");
-            } finally {
                 setTimeout(() => {
-                    btn.classList.remove('btn-loading');
+                    clearAll();
+                    btn.disabled = false;
                     btn.innerText = "𝑺𝑬𝑵𝑫 𝑨𝑮𝑨𝑰𝑵";
+                    setTimeout(() => { status.innerText = ""; }, 3000);
                 }, 1000);
+
+            } catch (err) {
+                status.innerText = "⋆ 傳送失敗，請稍後再試 ⋆";
+                status.className = "mt-8 text-[13px] font-bold text-red-400";
+                btn.disabled = false;
             }
         };
-
-        function showStatus(text, classes) {
-            const status = document.getElementById("status");
-            status.innerText = text;
-            status.className = `text-[10px] font-medium tracking-widest animate__animated ${classes}`;
-            setTimeout(() => {
-                status.classList.add('animate__fadeOut');
-            }, 3000);
-        }
     </script>
 </body>
 </html>
